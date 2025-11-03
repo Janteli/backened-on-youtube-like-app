@@ -1,12 +1,14 @@
 const asynHandler = (requestHandler) => {
   (req, res, next) => {
-    Promise.resolve(requestHandler(req,res,next)).catch((error) => next(error));
-  }
-}
+    Promise.resolve(requestHandler(req, res, next)).catch((error) =>
+      next(error)
+    );
+  };
+};
 
 //requestHandler is a function that handles incoming requests and responses in an asynchronous manner.
 
-export {asynHandler}
+export { asynHandler };
 
 // const asyncHandler = (fn) => async (req, res, next, error) =>{
 //     try {
